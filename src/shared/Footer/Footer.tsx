@@ -1,6 +1,7 @@
+// 16 версия реакта куку))
 import React from "react";
 import "./Footer.css";
-
+// табуляции
 export function Footer() {
   return (
     <footer className="footer">
@@ -14,10 +15,12 @@ export function Footer() {
           <p>© 2024. Все права защищены</p>
           <ul className="footer-links">
             <li>
+                {/* Link */}
               <a href="/terms">Условия использования</a>
             </li>
             <li>
-              <a href="/privacy">Политика конфиденциальности</a>
+                {/* Link */}
+                <a href="/privacy">Политика конфиденциальности</a>
             </li>
           </ul>
         </div>

@@ -14,6 +14,7 @@ export function AppRoutes() {
                     <Route path="/posts" element={<PostListPage />} />
                     <Route path="/post/:id" element={<PostPage />} />
                     {/* <Route path="/liked" element={<LikedPage />} /> */}
+                    {/* логин и рег */}
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -4,12 +4,13 @@ import './PostPage.css';
 
 export function PostPage() {
     const { id } = useParams();
+    // loading, error тоже надо
     const { post } = usePostById(Number(id));
 
     if (!post) {
         return <div>Пост не найден</div>;
     }
-
+    // √
     const formattedDate = post.date ? new Date(post.date).toLocaleDateString() : "";
 
     return (

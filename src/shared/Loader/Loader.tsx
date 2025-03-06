@@ -1,5 +1,5 @@
 import { Oval } from 'react-loader-spinner';
-
+// не используешь, а надо бы
 export function Loader() {
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>

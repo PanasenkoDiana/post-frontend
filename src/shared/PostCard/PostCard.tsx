@@ -9,8 +9,15 @@ interface PostProps {
     date: string;
     category: string;
 }
-
+// PostCard
+// Лучше так не делать
+// Вариант А
+// interface PostProps { post: IPost }
 export function Post({ title, description, author, date, category }: PostProps) {
+    // Вариант Б
+    // const {title, descr, author, date... } = props
+    
+    // лайки лучше не делать в таком виде, если очень хочется можно сделать их свойством IPost и добавить на backend
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
 

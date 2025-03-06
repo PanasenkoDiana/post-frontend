@@ -6,7 +6,10 @@ import { useCategory } from "../../hooks/useCategories";
 import { IPost, ICategory } from "../../shared/types/types";
 
 export function PostListPage() {
+    // loading error тоже хендлим
     const { posts } = usePosts();
+    // отлично, не многие додумались
+    // Category -> category
     const { Category } = useCategory();
     const [filteredPosts, setFilteredPosts] = useState<IPost[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string>("Все");
@@ -16,6 +19,9 @@ export function PostListPage() {
     }
 
     useEffect(() => {
+        // ну способ мощный конечно)). Не понял только зачем
+        // Если массив пустой, то лучше posts.length
+        // Если проверить что посты это не undefined и тд, тогда просто if (posts)
         if (!Array.isArray(posts)) {
             setFilteredPosts([]);
             return;
@@ -26,6 +32,7 @@ export function PostListPage() {
         } else {
             setFilteredPosts(
                 posts.filter((post: IPost) =>
+                    // okay good
                     post.category.name.toLowerCase().includes(selectedCategory.toLowerCase())
                 )
             );
@@ -35,6 +42,7 @@ export function PostListPage() {
     return (
         <div className="post-list-container">
             <div className="category-filter">
+                {/* )) тоже самое что и выше */}
                 {Array.isArray(Category) ? (
                     <select value={selectedCategory} onChange={handleCategoryChange}>
                         <option value="Все">Все</option>
@@ -45,6 +53,7 @@ export function PostListPage() {
                         ))}
                     </select>
                 ) : (
+                    // good, но лучше делать вместо isArray loading и error
                     <p>Загрузка категорий...</p>
                 )}
             </div>
